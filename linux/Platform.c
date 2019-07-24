@@ -22,6 +22,8 @@ in the source distribution for its full text.
 #include "ClockMeter.h"
 #include "HostnameMeter.h"
 #include "LinuxProcess.h"
+#include "CPUTempMeter.h"
+#include "CPUFreqMeter.h"
 
 #include <math.h>
 #include <assert.h>
@@ -110,6 +112,8 @@ void Platform_setBindings(Htop_Action* keys) {
 
 MeterClass* Platform_meterTypes[] = {
    &CPUMeter_class,
+   &CPUTempMeter_class,
+   &CPUFreqMeter_class,
    &ClockMeter_class,
    &LoadAverageMeter_class,
    &LoadMeter_class,
